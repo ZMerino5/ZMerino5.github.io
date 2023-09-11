@@ -13,13 +13,14 @@ $(function () {
       $(document).on("keyup", handleKeyUp);
       firstTimeSetup = false;
       //start game
-      setInterval(main, 1000 / frameRate);
+      setInterval(main, 500 / frameRate);
     }
     //create walls
     createPlatform(-50, -50, canvas.width + 100, 50); //top
     createPlatform(-50, canvas.height - 10, canvas.width + 100, 200); //right
     createPlatform(-50, -50, 50, canvas.height + 500); //bottom
     createPlatform(canvas.width, -50, 50, canvas.height + 100);
+  
 
     /**
      * Uncomment the loops below to add a "grid" to your platformer game's screen
@@ -44,9 +45,16 @@ $(function () {
     // You must decide the x position, y position, width, and height of the platforms
     // example usage: createPlatform(x,y,width,height)
 
-
-
-    
+    createCollectable("steve", 200, 170, 6, 0.7);
+    createCollectable("steve", 500, 300, 20, 0.5);
+    createCollectable("grace", 500, 300);
+    createCannon("right", 400, 3000);
+    createCannon("right", 700, 3000);
+    createCannon("left", 500, 3000);
+    createPlatform(1000, 700, 200, 20);
+    createPlatform(800, 600, 100, 20);
+    createPlatform(900, 475, 75, 20);
+    createPlatform(90, 425, 550, 20);
     // TODO 2
     // Create collectables
     // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
